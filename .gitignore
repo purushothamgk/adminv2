@@ -14,3 +14,5 @@ app/dashboard/dashboard.component.js
 app/heroes/heroes.component.js
 
 app/hero-detail/hero-detail.component.js
+
+app/login/login.component.js

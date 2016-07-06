@@ -1,9 +1,12 @@
 import { Component }       from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 import { HeroService }     from './hero.service';
+import { LoginService }     from './login.service';
 import { HeroesComponent } from './heroes/heroes.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import {LOGGING_PROVIDERS} from './mylogger.service';
 
 @Component({
   selector: 'my-app',
@@ -19,7 +22,9 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
-    HeroService
+    HeroService,
+    LOGGING_PROVIDERS,
+    LoginService
   ]
 
 })
@@ -33,7 +38,12 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: DashboardComponent,
+    component: DashboardComponent
+ },
+ {
+    path: '/login',
+    name: 'Login',
+    component: LoginComponent,
     useAsDefault: true
  },
  {
